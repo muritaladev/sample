@@ -1,0 +1,26 @@
+{
+  "name": "@afltech/afl-cloud-functions",
+  "version": "1.0.0",
+  "description": "Cloud function for 9japay",
+  "main": "build/src/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "dev": "npm run build && npx @google-cloud/functions-framework --source=build/src/ --target=fastifyFunction",
+    "deploy": "gcloud functions deploy test-func-project --entry-point fastifyFunction --runtime nodejs14 --trigger-http --project inspired-victor-344313"
+  },
+  "author": "Muritala David <d.muritala@africafintech.co.uk>",
+  "license": "ISC",
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^3.1.2",
+    "@types/node": "^18.0.0",
+    "fastify-tsconfig": "^1.0.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "fastify": "^4.0.3",
+    "http-status": "^1.5.2",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.7.0"
+  }
+}
